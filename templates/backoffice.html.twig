@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block nav %}
+    <nav>
+        <ul>
+            <li>
+                <a href="{{ url('e_m_home') }}">Retour sur la partie publique</a>
+            </li>
+            <li>
+                <a href="{{ url('backoffice_home') }}">Accueil Administration</a>
+            </li>
+            <li>
+                <a href="{{ url('e_m_character_index') }}">Gestion des personnages</a>
+            </li>
+            <li>
+                <a href="{{ url('e_m_user_index') }}">Gestion des utilisateur·trice·s</a>
+            </li>
+        </ul>
+    </nav>
+{% endblock %}

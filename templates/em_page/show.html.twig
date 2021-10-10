@@ -1,0 +1,30 @@
+{% extends 'backoffice.html.twig' %}
+
+{% block title %}Page{% endblock %}
+
+{% block body %}
+    <h1>Page</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ page.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ page.title }}</td>
+            </tr>
+            <tr>
+                <th>Body</th>
+                <td>{{ page.body }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('e_m_page_index') }}">back to list</a>
+
+    <a href="{{ path('e_m_page_edit', {'id': page.id}) }}">edit</a>
+
+    {{ include('em_page/_delete_form.html.twig') }}
+{% endblock %}

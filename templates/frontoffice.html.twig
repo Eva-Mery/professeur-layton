@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block nav %}
+    <nav>
+        <ul>
+            <li>
+                <a href="{{ url('e_m_characters') }}">Personnages</a>
+            </li>
+            {% if app.user is defined and app.user is not empty and is_granted('ROLE_ADMIN') %}
+                <li>
+                    <a href="{{ url('backoffice_home') }}">Administration du site</a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+{% endblock %}
+
+{% block footer %}
+    <nav>
+        <ul>
+            <li>
+                <a href="{{ url('frontoffice_e_m_page', {'page': 2}) }}">Qui sommes-nous ?</a>
+            </li>
+            <li>
+                <a href="{{ url('frontoffice_e_m_page', {'page': 1}) }}">Mentions légales</a>
+            </li>
+        </ul>
+    </nav>
+{% endblock %}

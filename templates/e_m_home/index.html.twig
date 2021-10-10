@@ -1,0 +1,47 @@
+{% extends 'frontoffice.html.twig' %}
+
+{% block title %}Home Sweet Home !{% endblock %}
+
+{% block header %}
+    Hello ça marche pas comme ça
+{% endblock %}
+
+{% block body %}
+    <style>
+        .em-main-page { margin: 1em auto; max-width: 1000px; width: 95%; font: 18px/1.5 sans-serif; }
+    </style>
+
+    <div class="em-main-page">
+        <h1> Bienvenue sur le site sur l'univers du Professeur Layton
+
+        <h2> Les aventures du Professeur Layton </h2>
+
+        Vous trouverez ici les différentes aventures du Professeur Layton.
+
+        <h2> Les personnages de l'univers Layton </h2>
+
+        Vous trouverez ici les différents personnages apparaissant durant les aventures du Professeur Layton.
+
+        <h2> Les énigmes du Professeur Layton </h2>
+
+        Vous trouverez ici les différentes énigmes que l'on peut trouver durant les aventures du Professeur Layton.
+
+        <h2> Le salon de thé </h2>
+
+        Vous pourrez discuter ici avec d'autres amateurs des aventures du Professeur Layton.
+
+        {# On affiche l'état logué/anonyme de l'utilisateur #}
+        <div class="logged-in-user-container">
+            {% if app.user is defined and app.user is not empty %}
+                <p>Vous êtes identifié·e en tant que :</p>
+                <pre>
+                    {{ dump(app.user) }}
+                </pre>
+            {% else %}
+                <p>Vous n'êtes pas identifié·e.</p>
+            {% endif %}
+        </div>
+
+    </div>
+
+{% endblock %}
