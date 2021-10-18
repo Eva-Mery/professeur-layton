@@ -1,6 +1,6 @@
 {% extends 'frontoffice.html.twig' %}
 
-{% block title %}Hello NewsController!{% endblock %}
+{% block title %}Personnages des jeux{% endblock %}
 
 {% block body %}
 <style>
@@ -14,11 +14,11 @@
     <ul>
         {% if characters is defined and characters is not empty %}        
             {% for character in characters %}
-                <li>
-                    {{ character.name }}
-                    <br />
-                    {{ character.description|raw }}
-                </li>
+                <tr>
+                    <td>{{ character.name }}</td>
+                    <td>{{ character.picture|raw }}</td>
+                    <td>{{ character.description|raw }}</td>
+                </tr>
             {% endfor %}
         {% else %}
             <li>

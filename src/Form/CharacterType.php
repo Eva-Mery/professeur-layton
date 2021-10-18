@@ -14,11 +14,14 @@ class CharacterType extends AbstractType
     {
         $builder
             ->add('name')
+            ->add('picture', CKEditorType::class)
             ->add('description', CKEditorType::class)
+            /*
             ->add('picture', null, [
                 'required' => false,
                 'empty_data' => '',
             ])
+            */
         ;
     }
 

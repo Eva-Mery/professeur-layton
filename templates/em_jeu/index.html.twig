@@ -1,0 +1,41 @@
+{% extends 'backoffice.html.twig' %}
+
+{% block title %}EMJeu index{% endblock %}
+
+{% block body %}
+    <h1>EMJeu index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Boite</th>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for jeu in adventures %}
+            <tr>
+                <td>{{ jeu.id }}</td>
+                <td>{{ jeu.Nom }}</td>
+                <td>{{ jeu.Boite|raw }}</td>
+                <td>{{ jeu.Date ? jeu.Date|date('Y-m-d') : '' }}</td>
+                <td>{{ jeu.Description|raw }}</td>
+                <td>
+                    <a href="{{ path('em_jeu_show', {'id': jeu.id}) }}">Afficher</a>
+                    <a href="{{ path('em_jeu_edit', {'id': jeu.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Aucune aventure enregistrée</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('em_jeu_new') }}">Ajouter une aventure</a>
+{% endblock %}

@@ -1,18 +1,18 @@
 {% extends 'backoffice.html.twig' %}
 
-{% block title %}Character index{% endblock %}
+{% block title %}Index des personnages{% endblock %}
 
 {% block body %}
-    <h1>Character index</h1>
+    <h1>Index des personnages</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
+                <th>Nom</th>
+                <th>Photo</th>
                 <th>Description</th>
-                <th>Picture</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -20,20 +20,21 @@
             <tr>
                 <td>{{ character.id }}</td>
                 <td>{{ character.name }}</td>
-                <td>{{ character.description }}</td>
-                <td>{{ character.picture }}</td>
+                <td>{{ character.picture|raw }}</td>
+                <td>{{ character.description|raw }}</td>
+
                 <td>
-                    <a href="{{ path('e_m_character_show', {'id': character.id}) }}">show</a>
-                    <a href="{{ path('e_m_character_edit', {'id': character.id}) }}">edit</a>
+                    <a href="{{ path('e_m_character_show', {'id': character.id}) }}">Voir</a>
+                    <a href="{{ path('e_m_character_edit', {'id': character.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">Pas de personnages trouvés</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('e_m_character_new') }}">Create new</a>
+    <a href="{{ path('e_m_character_new') }}">Ajouter un personnage</a>
 {% endblock %}

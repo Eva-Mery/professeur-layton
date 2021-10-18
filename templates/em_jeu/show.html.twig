@@ -1,0 +1,38 @@
+{% extends 'backoffice.html.twig' %}
+
+{% block title %}Afficher un jeu{% endblock %}
+
+{% block body %}
+    <h1>Afficher un jeu</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ jeu.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ jeu.Nom }}</td>
+            </tr>
+            <tr>
+                <th>Boite</th>
+                <td>{{ jeu.Boite|raw }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ jeu.Date ? jeu.Date|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ jeu.Description|raw }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('em_jeu_index') }}">Retour à la liste</a>
+
+    <a href="{{ path('em_jeu_edit', {'id': jeu.id}) }}">Modifier</a>
+
+    {{ include('em_jeu/_delete_form.html.twig') }}
+{% endblock %}

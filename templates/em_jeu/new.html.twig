@@ -1,0 +1,11 @@
+{% extends 'backoffice.html.twig' %}
+
+{% block title %}Ajouter une aventure{% endblock %}
+
+{% block body %}
+    <h1>Ajouter une aventure</h1>
+
+    {{ include('em_jeu/_form.html.twig') }}
+
+    <a href="{{ path('em_jeu_index') }}">Retour à la liste</a>
+{% endblock %}
