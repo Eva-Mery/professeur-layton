@@ -4,8 +4,18 @@
     <nav>
         <ul>
             <li>
+                <a href="{{ url('e_m_adventures') }}">Aventures</a>
+            </li>
+            <li>
                 <a href="{{ url('e_m_characters') }}">Personnages</a>
             </li>
+            <li>
+                <a href="{{ url('e_m_puzzles') }}">Énigmes</a>
+            </li>
+            <li>
+                <a href="{{ url('e_m_tea_room') }}">Salon de thé</a>
+            </li>
+
             {% if app.user is defined and app.user is not empty and is_granted('ROLE_ADMIN') %}
                 <li>
                     <a href="{{ url('backoffice_home') }}">Administration du site</a>

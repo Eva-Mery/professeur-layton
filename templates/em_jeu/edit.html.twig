@@ -1,13 +1,13 @@
 {% extends 'backoffice.html.twig' %}
 
-{% block title %}Edit EMJeu{% endblock %}
+{% block title %}Modifier une aventure{% endblock %}
 
 {% block body %}
-    <h1>Edit EMJeu</h1>
+    <h1>Modifier une aventure</h1>
 
-    {{ include('em_jeu/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('em_jeu/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-    <a href="{{ path('em_jeu_index') }}">back to list</a>
+    <a href="{{ path('em_jeu_index') }}">Retour à la liste</a>
 
     {{ include('em_jeu/_delete_form.html.twig') }}
 {% endblock %}

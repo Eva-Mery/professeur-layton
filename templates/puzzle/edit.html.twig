@@ -1,0 +1,13 @@
+{% extends 'backoffice.html.twig' %}
+
+{% block title %}Modifier une énigme{% endblock %}
+
+{% block body %}
+    <h1>Modifier une énigme</h1>
+
+    {{ include('puzzle/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+    <a href="{{ path('puzzle_index') }}">Retour à la liste</a>
+
+    {{ include('puzzle/_delete_form.html.twig') }}
+{% endblock %}

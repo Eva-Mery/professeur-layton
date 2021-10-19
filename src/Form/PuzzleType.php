@@ -2,29 +2,28 @@
 
 namespace App\Form;
 
-use App\Entity\EMJeu;
+use App\Entity\Puzzle;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class EMJeuType extends AbstractType
+class PuzzleType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('Nom')
-            ->add('Boite', CKEditorType::class)
-            ->add('Date')
-            ->add('Description', CKEditorType::class)
-            ->add('position')
+            ->add('Jeu')
+            ->add('Numero')
+            ->add('Enonce', CKEditorType::class)
+            ->add('Solution', CKEditorType::class)
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => EMJeu::class,
+            'data_class' => Puzzle::class,
         ]);
     }
 }

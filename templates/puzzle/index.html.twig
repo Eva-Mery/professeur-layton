@@ -1,0 +1,41 @@
+{% extends 'backoffice.html.twig' %}
+
+{% block title %}Index des images{% endblock %}
+
+{% block body %}
+    <h1>Index des images</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Jeu</th>
+                <th>Numéro</th>
+                <th>Énoncé</th>
+                <th>Solution</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for puzzle in puzzles %}
+            <tr>
+                <td>{{ puzzle.id }}</td>
+                <td>{{ puzzle.Jeu }}</td>
+                <td>{{ puzzle.Numero }}</td>
+                <td>{{ puzzle.Enonce|raw }}</td>
+                <td>{{ puzzle.Solution|raw }}</td>
+                <td>
+                    <a href="{{ path('puzzle_show', {'id': puzzle.id}) }}">Afficher</a>
+                    <a href="{{ path('puzzle_edit', {'id': puzzle.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Rien en base</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('puzzle_new') }}">Ajouter une énigme</a>
+{% endblock %}

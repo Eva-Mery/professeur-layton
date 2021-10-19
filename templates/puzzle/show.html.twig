@@ -1,0 +1,38 @@
+{% extends 'backoffice.html.twig' %}
+
+{% block title %}Afficher une énigme{% endblock %}
+
+{% block body %}
+    <h1>Afficher une énigme</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ puzzle.id }}</td>
+            </tr>
+            <tr>
+                <th>Jeu</th>
+                <td>{{ puzzle.Jeu }}</td>
+            </tr>
+            <tr>
+                <th>Numéro</th>
+                <td>{{ puzzle.Numero }}</td>
+            </tr>
+            <tr>
+                <th>Énoncé</th>
+                <td>{{ puzzle.Enonce|raw }}</td>
+            </tr>
+            <tr>
+                <th>Solution</th>
+                <td>{{ puzzle.Solution|raw }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('puzzle_index') }}">Retour à liste</a>
+
+    <a href="{{ path('puzzle_edit', {'id': puzzle.id}) }}">Modifier</a>
+
+    {{ include('puzzle/_delete_form.html.twig') }}
+{% endblock %}

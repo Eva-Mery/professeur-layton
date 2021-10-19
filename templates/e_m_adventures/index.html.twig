@@ -1,6 +1,6 @@
 {% extends 'frontoffice.html.twig' %}
 
-{% block title %}Aventures du Professeur!{% endblock %}
+{% block title %}Aventures du Professeur !{% endblock %}
 
 {% block body %}
 
@@ -9,26 +9,24 @@
     </style>
 
     <div class="em-main-page">
-        <h1> Les aventures du Professeur Layton </h1>
+        <h1>Les aventures du Professeur Layton</h1>
 
-        Vous trouverez ici les différentes aventures du Professeur Layton dans l'ordre chronologique.
-
-        <h2> Professeur Layton et l'appel du spectre </h2>
-
-        <h3> Résumé </h3>
-
-        <h2> Professeur Layton et le masque des miracles </h2>
-
-        <h2> Professeur Layton et l'héritage des Aslantes </h2>
-
-        <h2> Professeur Layton et l'étrange village </h2>
-
-        <h2> Professeur Layton et la boîte de Pandore </h2>
-
-        <h2> Professeur Layton et le destin perdu </h2>
-
- 
-
+        <ul>
+            {% if adventures is defined and adventures is not empty %}
+                {% for jeu in adventures %}
+                    <tr>
+                        <td>{{ jeu.Nom }}</td>
+                        <td>{{ jeu.Boite|raw }}</td>
+                        <td>{{ jeu.Date ? jeu.Date|date('Y-m-d') : '' }}</td>
+                        <td>{{ jeu.Description|raw }}</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <li>
+                    Aucune aventure trouvée dans la base... :(
+                </li>
+            {% endif %}
+        </ul>
     </div>
 
 {% endblock %}
