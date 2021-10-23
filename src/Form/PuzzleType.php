@@ -13,7 +13,7 @@ class PuzzleType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('Jeu')
+            ->add('NomJeu')
             ->add('Numero')
             ->add('Enonce', CKEditorType::class)
             ->add('Solution', CKEditorType::class)

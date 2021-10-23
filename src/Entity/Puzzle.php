@@ -20,7 +20,7 @@ class Puzzle
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Jeu;
+    private $NomJeu;
 
     /**
      * @ORM\Column(type="integer")
@@ -47,14 +47,14 @@ class Puzzle
         return $this->id;
     }
 
-    public function getJeu(): ?string
+    public function getNomJeu(): ?string
     {
-        return $this->Jeu;
+        return $this->NomJeu;
     }
 
-    public function setJeu(string $Jeu): self
+    public function setJeu(string $NomJeu): self
     {
-        $this->Jeu = $Jeu;
+        $this->NomJeu = $NomJeu;
 
         return $this;
     }
