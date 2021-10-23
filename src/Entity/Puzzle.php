@@ -37,6 +37,11 @@ class Puzzle
      */
     private $Solution;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $position;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +91,18 @@ class Puzzle
     public function setSolution(string $Solution): self
     {
         $this->Solution = $Solution;
+
+        return $this;
+    }
+
+    public function getPosition(): ?int
+    {
+        return $this->position;
+    }
+
+    public function setPosition(int $position): self
+    {
+        $this->position = $position;
 
         return $this;
     }

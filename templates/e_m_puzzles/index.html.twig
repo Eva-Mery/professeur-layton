@@ -1,6 +1,6 @@
 {% extends 'frontoffice.html.twig' %}
 
-{% block title %}Hello WorldRecordController!{% endblock %}
+{% block title %}Liste des énigmes{% endblock %}
 
 {% block body %}
 <style>
@@ -9,12 +9,23 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1> Liste des énigmes </h1>
 
-    This friendly message is coming from:
     <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Cours/m3104/sf/src/Controller/EMPuzzlesController.php'|file_link(0) }}">src/Controller/EMPuzzlesController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Cours/m3104/sf/templates/e_m_puzzles/index.html.twig'|file_link(0) }}">templates/e_m_puzzles/index.html.twig</a></code></li>
+        {% if puzzles is defined and puzzles is not empty %}
+            {% for puzzle in puzzles %}
+                <tr>
+                    <td>{{ puzzle.Jeu }}</td>
+                    <td>{{ puzzle.Numero }}</td>
+                    <td>{{ puzzle.Enonce|raw }}</td>
+                    <td>{{ puzzle.Solution|raw }}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <li>
+                Aucun personnage trouvé dans la base... :(
+            </li>
+        {% endif %}
     </ul>
 </div>
 {% endblock %}

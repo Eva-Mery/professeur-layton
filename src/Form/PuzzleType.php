@@ -17,6 +17,7 @@ class PuzzleType extends AbstractType
             ->add('Numero')
             ->add('Enonce', CKEditorType::class)
             ->add('Solution', CKEditorType::class)
+            ->add('position')
         ;
     }
 

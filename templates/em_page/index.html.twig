@@ -19,7 +19,7 @@
             <tr>
                 <td>{{ page.id }}</td>
                 <td>{{ page.title }}</td>
-                <td>{{ page.body }}</td>
+                <td>{{ page.body|raw }}</td>
                 <td>
                     <a href="{{ path('e_m_page_show', {'id': page.id}) }}">show</a>
                     <a href="{{ path('e_m_page_edit', {'id': page.id}) }}">edit</a>
