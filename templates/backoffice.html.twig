@@ -19,10 +19,26 @@
                 <a href="{{ url('puzzle_index') }}">Gestion des énigmes</a>
             </li>
             <li>
+                <a href="{{ url('video_index') }}">Gestion des vidéos</a>
+            </li>
+            <li>
                 <a href="{{ url('e_m_user_index') }}">Gestion des utilisateur·trice·s</a>
             </li>
             <li>
                 <a href="{{ url('e_m_page_index') }}">Gestion des pages</a>
+            </li>
+        </ul>
+    </nav>
+{% endblock %}
+
+{% block footer %}
+    <nav>
+        <ul>
+            <li>
+                <a href="{{ url('frontoffice_e_m_page', {'page': 2}) }}">Qui sommes-nous ?</a>
+            </li>
+            <li>
+                <a href="{{ url('frontoffice_e_m_page', {'page': 1}) }}">Mentions légales</a>
             </li>
         </ul>
     </nav>

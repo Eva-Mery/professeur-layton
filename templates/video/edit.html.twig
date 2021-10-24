@@ -1,0 +1,13 @@
+{% extends 'backoffice.html.twig' %}
+
+{% block title %}Modifier une vidéo{% endblock %}
+
+{% block body %}
+    <h1>Modifier une vidéo</h1>
+
+    {{ include('video/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('video_index') }}">back to list</a>
+
+    {{ include('video/_delete_form.html.twig') }}
+{% endblock %}

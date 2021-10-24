@@ -1,0 +1,11 @@
+{% extends 'backoffice.html.twig' %}
+
+{% block title %}Ajout d'une vidéo{% endblock %}
+
+{% block body %}
+    <h1>Ajout d'une vidéo</h1>
+
+    {{ include('video/_form.html.twig') }}
+
+    <a href="{{ path('video_index') }}">back to list</a>
+{% endblock %}
