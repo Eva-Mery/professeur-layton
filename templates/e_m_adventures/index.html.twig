@@ -17,7 +17,6 @@
                     <tr>
                         <td>{{ jeu.Nom }}</td>
                         <td>{{ jeu.Boite|raw }}</td>
-                        <td>{{ jeu.Date ? jeu.Date|date('Y-m-d') : '' }}</td>
                         <td>{{ jeu.Description|raw }}</td>
                     </tr>
                 {% endfor %}

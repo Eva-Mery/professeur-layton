@@ -28,11 +28,6 @@ class EMJeu
     private $Boite;
 
     /**
-     * @ORM\Column(type="date")
-     */
-    private $Date;
-
-    /**
      * @ORM\Column(type="text")
      */
     private $Description;
@@ -67,18 +62,6 @@ class EMJeu
     public function setBoite(string $Boite): self
     {
         $this->Boite = $Boite;
-
-        return $this;
-    }
-
-    public function getDate(): ?\DateTimeInterface
-    {
-        return $this->Date;
-    }
-
-    public function setDate(\DateTimeInterface $Date): self
-    {
-        $this->Date = $Date;
 
         return $this;
     }

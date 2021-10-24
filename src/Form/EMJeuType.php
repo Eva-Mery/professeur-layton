@@ -15,7 +15,6 @@ class EMJeuType extends AbstractType
         $builder
             ->add('Nom')
             ->add('Boite', CKEditorType::class)
-            ->add('Date')
             ->add('Description', CKEditorType::class)
             ->add('position')
         ;

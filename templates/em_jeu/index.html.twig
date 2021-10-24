@@ -11,7 +11,6 @@
                 <th>Id</th>
                 <th>Nom</th>
                 <th>Boite</th>
-                <th>Date</th>
                 <th>Description</th>
                 <th>Actions</th>
             </tr>
@@ -22,7 +21,6 @@
                 <td>{{ jeu.id }}</td>
                 <td>{{ jeu.Nom }}</td>
                 <td>{{ jeu.Boite|raw }}</td>
-                <td>{{ jeu.Date ? jeu.Date|date('Y-m-d') : '' }}</td>
                 <td>{{ jeu.Description|raw }}</td>
                 <td>
                     <a href="{{ path('em_jeu_show', {'id': jeu.id}) }}">Afficher</a>
